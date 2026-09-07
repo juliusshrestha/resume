@@ -14,7 +14,7 @@
     --meta: #5a5e63;
     --accent: #2d5883;
   }
-  @page { size: A4; margin: 0; }
+  @page { size: A4; margin: 14mm; }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
   body {
@@ -34,7 +34,7 @@
   }
   @media print {
     body { background: #fff; }
-    .page { margin: 0; box-shadow: none; padding: 14mm; }
+    .page { margin: 0; box-shadow: none; padding: 0; width: auto; }
   }
   .job, .edu { page-break-inside: avoid; break-inside: avoid; }
   .job-head, .edu-head { page-break-after: avoid; break-after: avoid; }
