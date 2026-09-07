@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Julesh Shrestha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #21242a;
+    --ink-soft: #45484d;
+    --label: #4a4d53;
+    --meta: #5a5e63;
+    --accent: #2d5883;
+  }
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--ink);
+    font-size: 9.7pt;
+    line-height: 1.35;
+    -webkit-font-smoothing: antialiased;
+    background: #f2f2f2;
+  }
+  .page {
+    width: 210mm;
+    padding: 14mm 14mm 12mm 14mm;
+    background: #fff;
+    margin: 12px auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,.08);
+  }
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; box-shadow: none; padding: 14mm; }
+  }
+  .job, .edu { page-break-inside: avoid; break-inside: avoid; }
+  .job-head, .edu-head { page-break-after: avoid; break-after: avoid; }
+  .bullets li { page-break-inside: avoid; break-inside: avoid; }
+
+  /* ===== Header ===== */
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: start;
+    margin-bottom: 14pt;
+  }
+  h1.name {
+    font-size: 27pt;
+    font-weight: 700;
+    line-height: 1.02;
+    margin: 0;
+    letter-spacing: -0.5pt;
+  }
+  h1.name span { display: block; }
+  .role {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 9pt;
+    color: var(--accent);
+    letter-spacing: 0.5pt;
+    margin-top: 6pt;
+  }
+  .contact {
+    font-size: 8.8pt;
+    color: var(--label);
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 18pt;
+    row-gap: 5pt;
+    align-content: start;
+    padding-top: 4pt;
+  }
+  .contact a { color: var(--accent); text-decoration: none; }
+  .contact .item { display: flex; align-items: center; gap: 5pt; white-space: nowrap; }
+  .contact svg { flex: 0 0 auto; }
+  .contact .in-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent);
+    color: #fff;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 600;
+    font-size: 6.4pt;
+    width: 10pt;
+    height: 10pt;
+    border-radius: 1.5pt;
+    letter-spacing: 0;
+  }
+
+  /* ===== Summary ===== */
+  .summary {
+    font-size: 10.2pt;
+    line-height: 1.4;
+    margin: 0 0 14pt 0;
+    color: var(--ink);
+  }
+
+  /* ===== Sections ===== */
+  h2.section {
+    font-size: 8.5pt;
+    color: var(--accent);
+    letter-spacing: 1.5pt;
+    font-weight: 600;
+    margin: 14pt 0 10pt 0;
+    padding-bottom: 4pt;
+    border-bottom: 0.5pt solid #dfe3e8;
+  }
+
+  /* ===== Skills ===== */
+  .skills { display: grid; grid-template-columns: 90pt 1fr; gap: 5pt 12pt; font-size: 9.4pt; }
+  .skills dt { color: var(--label); font-weight: 500; }
+  .skills dd { margin: 0; color: var(--ink); }
+
+  /* ===== Experience ===== */
+  .job { margin-bottom: 10pt; }
+  .job:last-child { margin-bottom: 0; }
+  .job-head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    margin-bottom: 4pt;
+  }
+  .job-title { font-size: 12.5pt; color: var(--ink); font-weight: 400; }
+  .job-title strong { font-weight: 700; }
+  .job-dates { font-size: 8.6pt; color: var(--meta); font-family: "IBM Plex Mono", monospace; }
+  .bullets { margin: 0; padding: 0; list-style: none; }
+  .bullets li {
+    font-size: 9.7pt;
+    line-height: 1.4;
+    padding-left: 11pt;
+    margin-bottom: 5pt;
+    position: relative;
+    color: var(--ink);
+  }
+  .bullets li::before {
+    content: "\2022";
+    position: absolute;
+    left: 2pt;
+    top: 0;
+    color: var(--label);
+    font-size: 9.7pt;
+    line-height: 1.4;
+  }
+
+  /* ===== Education ===== */
+  .edu { margin-bottom: 8pt; }
+  .edu-head {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    margin-bottom: 2pt;
+  }
+  .edu-title { font-size: 11.5pt; color: var(--ink); font-weight: 400; }
+  .edu-title strong { font-weight: 700; }
+  .edu-dates { font-size: 8.6pt; color: var(--meta); font-family: "IBM Plex Mono", monospace; }
+  .edu-body { font-size: 9.4pt; color: var(--ink-soft); line-height: 1.4; }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header>
+    <div>
+      <h1 class="name"><span>Julesh</span><span>Shrestha</span></h1>
+      <div class="role">FULL STACK DEVELOPER</div>
+    </div>
+    <div class="contact">
+      <div class="item">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#2d5883" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        <a href="mailto:juliusshrestha29@gmail.com">juliusshrestha29@gmail.com</a>
+      </div>
+      <div class="item">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#4a4d53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>+977 986 014 4827</span>
+      </div>
+      <div class="item">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#2d5883" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <a href="https://juleshshrestha.com.np">juleshshrestha.com.np</a>
+      </div>
+      <div class="item">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="#2d5883"><path d="M12 .5C5.4.5 0 5.9 0 12.5c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.6 3.3-1.2 3.3-1.2.7 1.7.2 3 .1 3.3.8.8 1.2 1.9 1.2 3.2 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6C20.6 22.3 24 17.8 24 12.5 24 5.9 18.6.5 12 .5z"/></svg>
+        <a href="https://github.com/juliusshrestha">github.com/juliusshrestha</a>
+      </div>
+      <div class="item">
+        <span class="in-badge">in</span>
+        <a href="https://linkedin.com/in/julesh-shrestha">linkedin.com/in/julesh-shrestha</a>
+      </div>
+      <div class="item">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#4a4d53" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>Kathmandu, Nepal &middot; Remote (UTC+5:45)</span>
+      </div>
+    </div>
+  </header>
+
+  <p class="summary">
+    Five years of TypeScript and JavaScript in production: NestJS and Node services, React and React Native
+    clients, Postgres and MySQL underneath, on AWS. The last two years have been in compliance software, where
+    an audit trail and correct access control matter as much as the feature itself. I also hold an MTech in AI and
+    still write Python when a model has to sit behind an API. The work I do best is the unglamorous kind:
+    permissions, slow queries, and the paths that only run when something fails.
+  </p>
+
+  <h2 class="section">SKILLS</h2>
+  <dl class="skills">
+    <dt>Languages</dt>  <dd>TypeScript, JavaScript, Python, SQL</dd>
+    <dt>Backend</dt>    <dd>NestJS, Express, GraphQL, REST API design, Sequelize, Prisma, FastAPI</dd>
+    <dt>Frontend</dt>   <dd>React, React Native, TanStack Query, Vue 2 and 3, Vuetify</dd>
+    <dt>Data</dt>       <dd>PostgreSQL (including JSONB), MySQL, MongoDB, Redis, OpenSearch, ETL pipelines, index and query tuning</dd>
+    <dt>Infra</dt>      <dd>AWS (EC2, S3, RDS/Aurora, IAM, OpenSearch, EKS), Docker, Kubernetes, Nginx, Cloudflare, CloudWatch, GitHub Actions and GitLab CI</dd>
+    <dt>Security</dt>   <dd>JWT and bearer-token auth, API keys and signed webhooks, RBAC and row-level access, rate limiting, presigned uploads, dependency and CVE hygiene, audit logging</dd>
+    <dt>ML</dt>         <dd>TensorFlow/Keras, CNNs, vector search (FAISS), ONNX Runtime, LLM and RAG integration, pandas</dd>
+  </dl>
+
+  <h2 class="section">EXPERIENCE</h2>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title"><strong>Full Stack Developer</strong> &middot; Dimitra Technology</div>
+      <div class="job-dates">Oct 2024 – Present</div>
+    </div>
+    <ul class="bullets">
+      <li>Built the due-diligence API in NestJS: it runs a deforestation check, generates the PDF a regulator reads, and records the result on Solana. Clients authenticate with per-user secret keys, and the chain write is async so a slow node can't hold up compliance reporting.</li>
+      <li>Designed the farm access-control layer (grant, revoke, membership-scoped visibility), enforced in the query, so technicians and factory staff only ever load the farms assigned to them.</li>
+      <li>Gave compliance teams a real audit trail: client-IP middleware and a metadata interceptor feeding paginated activity logs of who changed what, when.</li>
+      <li>Modelled roles and permissions for buying-station and factory operations: first-class roles, activation-key onboarding, role resolution at login, a permission matrix in the admin panel, and duplicate-registration guards.</li>
+      <li>Built the multi-tenant layer super-admins use across products (tenant store, routing, session isolation, switching), with carbon credits as the first adopter.</li>
+      <li>Reworked file handling: presigned S3 uploads with image normalisation, correct content-type and disposition, sanitised filenames, and a Puppeteer service for agreements, ID cards and reports after the old PDF library kept dropping sockets.</li>
+      <li>Maintained the platform on AWS EKS alongside our DevOps engineer: Docker images, cluster upgrades, and CloudWatch on the pods that matter.</li>
+      <li>Fixed the slow paths: a missing index on a hot join, reference tables looked up on every request, an org-wide user query nobody needed. Several admin screens went from seconds to instant.</li>
+      <li>Swapped sequential IDs in public traceability links for encoded external IDs decoded server-side, closing an enumeration path on a page anyone with the URL can open.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title"><strong>Freelance Full Stack Developer</strong></div>
+      <div class="job-dates">Nov 2021 – Present</div>
+    </div>
+    <ul class="bullets">
+      <li>Built the mobile API layer end to end (multi-device token auth, order timeline, notification inbox), plus the caching and indexing that keep list screens fast.</li>
+      <li>Wrote the Python ingest pipelines: scheduled async jobs with per-endpoint rate limiting and exponential backoff, checkpointed so a killed run resumes instead of restarting, versioned schema migrations that keep loader and consumer in lockstep, and cron failure emails so a broken run doesn't sit silent overnight.</li>
+      <li>Milestone events arrive by signed webhook with a dedup key; a nightly scan catches whatever the webhook missed.</li>
+      <li>Kept production healthy: PHP-FPM sized against real memory use, database contention traced, access logs turned into traffic reports, CDN caching and bot filtering with authenticated routes left uncached.</li>
+      <li>Built most of the React Native app (Expo, TypeScript): file-based navigation, a React Query data layer with pagination and prefetch, one API client handling token refresh and 401 sign-out, English/Chinese localisation down to date formats and request headers, push notifications, and a biometric unlock flow written as a state machine so each native error code gets the right response instead of an endless prompt.</li>
+      <li>Earlier clients: an async Python ETL for high-volume market data, portfolio and data-processing systems in NestJS, PostgreSQL and React, and the backend and schema for a bike-sharing prototype.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title"><strong>Software Engineer</strong> &middot; Terakoya Academia</div>
+      <div class="job-dates">May 2021 – Oct 2021</div>
+    </div>
+    <ul class="bullets">
+      <li>Wrote a TypeScript plugin for the Backstage developer portal that let people search GitHub and GitLab repositories by custom parameters.</li>
+      <li>Added corporate proxy support to a self-hosted PeerTube instance so it could make outbound requests from inside a corporate network.</li>
+      <li>Maintained the company's React, Django and MySQL sites and internal tools.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-head">
+      <div class="job-title"><strong>Web Development Intern</strong> &middot; Bitsbeat IT Solutions</div>
+      <div class="job-dates">Aug 2020 – Nov 2020</div>
+    </div>
+    <ul class="bullets">
+      <li>First professional exposure to web development: built small applications with JavaScript, Node and MongoDB, and learned how a backend is put together in a team.</li>
+    </ul>
+  </div>
+
+  <h2 class="section">EDUCATION</h2>
+
+  <div class="edu">
+    <div class="edu-head">
+      <div class="edu-title"><strong>MTech, Artificial Intelligence</strong> &middot; Kathmandu University</div>
+      <div class="edu-dates">2021 – 2024</div>
+    </div>
+    <div class="edu-body">Thesis on segmenting Wilms tumours from CT scans, comparing UNet, DeepLabv3 and SegFormer over 10,000+ images. Best model reached 94.5% IoU.</div>
+  </div>
+
+  <div class="edu">
+    <div class="edu-head">
+      <div class="edu-title"><strong>BSc, Computer Science</strong> &middot; Kathmandu University</div>
+      <div class="edu-dates">2016 – 2020</div>
+    </div>
+    <div class="edu-body">Final-year project on age and gender classification from facial images, working with a limited dataset.</div>
+  </div>
+
+</div>
+</body>
+</html>
